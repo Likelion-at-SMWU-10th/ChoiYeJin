@@ -16,16 +16,23 @@ body {
 h1 {
     font-size: 36px;
     font-weight: bold;
-    font-style: italic;
+    font-style: normal;
 }
 
 h2 {
-    background-color: #cbdff5;
+    background-color: #e8f0ff;
     font-size: 20px;
+    font-weight: lighter;
     color: #282828;
     margin-bottom: 16px;
     border-bottom: 1px solid #ebebeb;
     padding: 5px;
+}
+
+h3 {
+    font-size: 19.5px;
+    font-weight: bold;
+    color: #282828;
 }
 
 .mainbox {
