@@ -11,32 +11,49 @@
 <body>
     <div class="mainbox">
         <div class="title-box">
-            <h1>최예진</h1>
+            <h1>최예진<h3>(Choi Yejin)</h3></h1>
         </div>
+        <section>
+            <button type="button" class="btn btn-primary" id="liveToastBtn">Click Me!</button>
+            <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
+                <!-- <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11"> -->
+                    <div id="liveToast" class="toast" role="alert" aria-live="polite" aria-atomic="true" data-bs-delay="4000">
+                        <div class="toast-header">
+                            <img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Blue_Whale_Iphone_Emoji_JPG_large.png?v=1571606114" class="rounded me-2" alt="" height="20" width="21">
+                            <strong class="me-auto">Live Toast</strong>
+                            <small>>> just now</small>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            안녕하세요!  제 소개를 시작해볼까요? <img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Clapping_Hands_Emoji_ios10_d7ab242e-7230-47bf-b1e2-d46a4bc51b5b_large.png?v=1571606090" height="20" width="21">
+                        </div>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </section>
         <section>
             <h2>ABOUT ME</h2>
             <p>숙명여자대학교 역사문화학과 19학번 - 4학년 1학기 재학 중</p>
             <ul>
                 <li>나이: 23</li>
                 <li>파트: 백엔드</li>
-                <li>올해 멋사에서 얻어가고 싶은 것 : 사자들과 프로젝트 도전!</li>
+                <li>올해 멋사에서 얻어가고 싶은 것: 좋은 사자들과 프로젝트 도전!</li>
             </ul>
         </section>
         <section>
             <h2>MY STUDY</h2>
-            <p>공부하고 있는 언어: Python</p>
-            <p>공부 중인 것: 웹 기초, 데이터베이스</p>
-            <p>관심 분야: 웹 백엔드 개발</p>
-            <p>웹 개발이 궁금해서 이것저것 건드려보는 중이에요. 멋사 10기를 백분 활용하려 합니다!</p>
+            <p>공부하고 있는 언어: Python, SAP ABAP</p>
+            <p>공부 중인 것: html/css, 웹기초, 데이터베이스</p>
+            <p>관심 분야: 서버 개발, 백엔드 개발</p>
+            <p>개발이 궁금해서 이것저것 건드려보는 중이에요. 멋사 10기를 백분 활용하려 합니다!</p>
         </section>
         <section>
-            <h2>MY SITE</h2>
             <div class="row">
                 <div class="col-sm-6">
                   <div class="card">
                     <div class="card-body">
                       <h5 class="card-title">GitHub</h5>
-                      <p class="card-text">깃허브 프로필 바로가기<br>깃허브 아이디: OaYenn</p>
+                      <p class="card-text">깃허브 프로필 바로가기<br>깃허브 아이디: OaYenn</bt></p>
                       <a href="#" class="btn btn-primary">Go GitHub</a>
                     </div>
                   </div>
@@ -45,8 +62,37 @@
                   <div class="card">
                     <div class="card-body">
                       <h5 class="card-title">기술 블로그</h5>
-                      <p class="card-text">Tistory 블로그<br>공부한 기록들</p>
+                      <p class="card-text">Tistory 블로그<br>공부하며 사는 이야기</p>
                       <a href="#" class="btn btn-primary">Go Blog</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <section>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Finally you are here..</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel"><img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Emoji_Icon_-_Thinking_large.png?v=1571606093" height="20" width="20"> &nbsp더 궁금한 것이 있나요?</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3">
+                          <label for="recipient-name" class="col-form-label">메시지를 보내보세요!<hr>Name:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                          <label for="message-text" class="col-form-label">Message:</label>
+                          <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Send message</button>
                     </div>
                   </div>
                 </div>
@@ -54,5 +100,6 @@
         </section>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
