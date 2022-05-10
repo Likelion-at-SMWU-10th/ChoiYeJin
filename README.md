@@ -6,4 +6,4 @@
 
 | 강의 내용 | 캡쳐 | 
 |:------:|:------|
-|`일단 만드는 PYTHON`|<img width=600 src="https://user-images.githubusercontent.com/98384956/167106326-b74bdff5-fef0-4064-a2a0-31fd311a1cfa.jpg">| 
+|`같이 푸는 PYTHON`|<img width=600 src="https://user-images.githubusercontent.com/98384956/167517590-88120940-e6d3-4306-aa2b-5a436aeea536.jpg">| 
