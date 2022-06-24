@@ -6,4 +6,7 @@
 
 | 강의 내용 | 캡쳐 | 
 |:------:|:------|
-|`일단 만드는 Django`|<img width="500" src="https://user-images.githubusercontent.com/98384956/174612334-39741871-09fd-49a3-b17b-5a2af3dc3f0f.jpg">| 
+|`일단 만드는 HTML/CSS`|<img width="500" src="https://user-images.githubusercontent.com/98384956/175445989-cd0f8061-3df6-40c0-96e0-53ec04434253.jpg">| 
+|`일단 만드는 PYTHON`|<img width="500" src="https://user-images.githubusercontent.com/98384956/175446050-5e71931b-964f-4e40-a588-f7cf450f213d.jpg">| 
+|`같이 푸는 PYTHON`|<img width="500" src="https://user-images.githubusercontent.com/98384956/175446085-827ea03b-9259-440b-a1d3-db7c323ad9f5.jpg">| 
+|`일단 만드는 Django`|<img width="500" src="https://user-images.githubusercontent.com/98384956/175446129-03ebd43c-137a-4f3c-97d3-1c2403b02b19.jpg">| 
