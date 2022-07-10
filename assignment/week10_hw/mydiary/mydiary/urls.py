@@ -12,4 +12,6 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('new/', views.new, name='new'),
     path('modelformcreate/', views.modelformcreate, name='modelformcreate'),
+    path('edit/', views.edit, name='edit'),
+    path('diaryupdate/<int:diary_id>', views.diaryupdate, name='diaryupdate'),
 ]

@@ -31,3 +31,17 @@ def modelformcreate(request):
     else:
         form = DiaryModelForm()
     return render(request, 'diaryapp/new.html', {'form':form})
+
+def edit(request):
+    return render(request, 'diaryapp/edit.html')
+
+def diaryupdate(request, diary_id):
+    post = get_object_or_404(Diary, pk=diary_id)
+    if request.method == 'POST':
+        form = DiaryModelForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('detail', diary_id=post.pk)
+    else:
+        form = DiaryModelForm(instance=post)
+        return render(request, 'diaryapp/edit.html', {'form':form})
