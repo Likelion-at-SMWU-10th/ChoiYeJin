@@ -24,4 +24,5 @@ urlpatterns = [
     path('diary/', views.diary, name='diary'),
     path('detail/<int:diary_id>', views.detail, name='detail'),
     path('recordkeeper/', include('recordkeeper.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
