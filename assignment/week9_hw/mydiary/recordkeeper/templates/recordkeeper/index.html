@@ -1,0 +1,11 @@
+{% extends 'diaryapp/base.html' %}
+
+{% block content %}
+{% load static %}
+
+    <title>Index</title>
+
+    <h1>이 일기의 주인장이 궁금하신가요?</h1>
+    <a href="{% url 'about' %}">주인장 알아보기</a>
+
+{% endblock %}
