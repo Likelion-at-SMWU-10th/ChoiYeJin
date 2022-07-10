@@ -10,5 +10,6 @@
     <p> 날짜: {{ diary.pub_date }} </p>
     <p> 자세한 본문: {{ diary.body }} </p>
     <a href="{% url 'diaryupdate' diary.id %}">수정하기</a>
+    <a href="{% url 'diarydelete' diary.id %}" onclick="return confirm('정말 삭제하시겠습니까?')">삭제하기</a>
 
 {% endblock %}

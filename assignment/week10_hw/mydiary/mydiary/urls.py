@@ -14,4 +14,5 @@ urlpatterns = [
     path('modelformcreate/', views.modelformcreate, name='modelformcreate'),
     path('edit/', views.edit, name='edit'),
     path('diaryupdate/<int:diary_id>', views.diaryupdate, name='diaryupdate'),
+    path('diarydelete/<int:diary_id>', views.diarydelete, name='diarydelete'),
 ]

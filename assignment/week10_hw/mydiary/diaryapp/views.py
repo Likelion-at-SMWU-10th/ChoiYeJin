@@ -45,3 +45,8 @@ def diaryupdate(request, diary_id):
     else:
         form = DiaryModelForm(instance=post)
         return render(request, 'diaryapp/edit.html', {'form':form})
+
+def diarydelete(request, diary_id):
+    post = get_object_or_404(Diary, pk=diary_id)
+    post.delete()
+    return redirect('diary')
