@@ -50,3 +50,11 @@ def diarydelete(request, diary_id):
     post = get_object_or_404(Diary, pk=diary_id)
     post.delete()
     return redirect('diary')
+
+def result(request):
+    query = request.GET.get('query', '')
+    if query:
+        diary_objects = Diary.objects.filter(title__startswith = query)
+        return render(request, 'diaryapp/result.html', {'result' : diary_objects})
+    else:
+        return render(request, 'diaryapp/result.html', {'error': "검색어를 입력해 주세요."})
