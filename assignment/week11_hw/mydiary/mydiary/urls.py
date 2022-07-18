@@ -17,4 +17,5 @@ urlpatterns = [
     path('edit/', views.edit, name='edit'),
     path('diaryupdate/<int:diary_id>', views.diaryupdate, name='diaryupdate'),
     path('diarydelete/<int:diary_id>', views.diarydelete, name='diarydelete'),
+    path('update_comment/<int:diary_id>/<int:comment_id>', views.update_comment, name='update_comment'),
 ]

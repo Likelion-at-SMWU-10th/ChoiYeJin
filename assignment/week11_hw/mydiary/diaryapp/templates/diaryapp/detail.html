@@ -22,7 +22,8 @@
     <h4>댓글 목록</h4>
     {% for comment in diary.comment_set.all %}
         {{ comment.content }}
-        {{ comment.created_at }}
+        {{ comment.updated_at }}
+        <a href="{% url 'update_comment' diary.id comment.id %}">수정하기</a>
         <br>
     {% endfor %}
 

@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render, redirect
-from .models import Diary
+from .models import Diary, Comment
 from django.utils import timezone
 from .forms import DiaryModelForm, CommentForm
 
@@ -70,4 +70,13 @@ def commentcreate(request, diary_id):
             comment.save()
             
     return redirect('detail', diary_id=diary.pk)
-   
+
+def update_comment(request, comment_id, diary_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    form = CommentForm(instance=comment)
+    if request.method == 'POST':
+        updateform = CommentForm(request.POST, instance=comment)
+        if updateform.is_valid():
+            updateform.save()
+            return redirect('detail', diary_id)
+    return render(request, 'diaryapp/comment_update.html', {'form':form})
