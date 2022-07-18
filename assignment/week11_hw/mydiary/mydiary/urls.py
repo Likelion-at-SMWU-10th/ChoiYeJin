@@ -18,4 +18,5 @@ urlpatterns = [
     path('diaryupdate/<int:diary_id>', views.diaryupdate, name='diaryupdate'),
     path('diarydelete/<int:diary_id>', views.diarydelete, name='diarydelete'),
     path('update_comment/<int:diary_id>/<int:comment_id>', views.update_comment, name='update_comment'),
+    path('delete_comment/<int:diary_id>/<int:comment_id>', views.delete_comment, name='delete_comment'),
 ]

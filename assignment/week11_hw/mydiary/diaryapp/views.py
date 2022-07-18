@@ -80,3 +80,9 @@ def update_comment(request, comment_id, diary_id):
             updateform.save()
             return redirect('detail', diary_id)
     return render(request, 'diaryapp/comment_update.html', {'form':form})
+
+def delete_comment(request, comment_id, diary_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    comment.delete()
+
+    return redirect('detail', diary_id)
