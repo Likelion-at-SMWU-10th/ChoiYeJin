@@ -10,6 +10,7 @@ urlpatterns = [
     path('detail/<int:diary_id>', views.detail, name='detail'),
     path('recordkeeper/', include('recordkeeper.urls')),
     path('result', views.result, name='result'),
+    path('commentcreate/<int:diary_id>', views.commentcreate, name='commentcreate'),
     path('accounts/', include('accounts.urls')),
     path('new/', views.new, name='new'),
     path('modelformcreate/', views.modelformcreate, name='modelformcreate'),

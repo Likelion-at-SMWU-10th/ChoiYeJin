@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from .models import Diary
 from django.utils import timezone
-from .forms import DiaryModelForm
+from .forms import DiaryModelForm, CommentForm
 
 # Create your views here.
 
@@ -16,8 +16,9 @@ def diary(request):
     return render(request, 'diaryapp/diary.html', {'diaries': diaries})
 
 def detail(request, diary_id):
-    diary_detail = get_object_or_404(Diary, pk = diary_id)
-    return render(request, 'diaryapp/detail.html', {'diary': diary_detail})
+    diary = get_object_or_404(Diary, pk = diary_id)
+    form = CommentForm()
+    return render(request, 'diaryapp/detail.html', {'form':form, 'diary':diary})
 
 def new(request):
     return render(request, 'diaryapp/new.html')
@@ -58,3 +59,15 @@ def result(request):
         return render(request, 'diaryapp/result.html', {'result' : diary_objects})
     else:
         return render(request, 'diaryapp/result.html', {'error': "검색어를 입력해 주세요."})
+
+def commentcreate(request, diary_id):
+    diary = get_object_or_404(Diary, pk=diary_id)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.diary = diary
+            comment.save()
+            
+    return redirect('detail', diary_id=diary.pk)
+   
