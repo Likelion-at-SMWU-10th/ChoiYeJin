@@ -1,0 +1,31 @@
+{% extends 'diaryapp/base.html' %}
+
+{% block content %}
+
+    <title>Diary</title>
+
+    <h1>Diary</h1>
+    <br>
+    <h3> 제목: {{ diary.title }}</h3>
+    <p> 날짜: {{ diary.pub_date }} </p>
+    <p> 자세한 본문: {{ diary.body }} </p>
+    <a href="{% url 'diaryupdate' diary.id %}">수정</a>
+    <a href="{% url 'diarydelete' diary.id %}" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
+    <br><br><br>
+    <form action="{% url 'commentcreate' diary.id %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">댓글 등록</button>
+    </form>
+    <br>
+
+    <h4>댓글 목록</h4>
+    {% for comment in diary.comment_set.all %}
+        {{ comment.content }}
+        {{ comment.updated_at }}
+        <a href="{% url 'update_comment' diary.id comment.id %}">수정</a>
+        <a href="{% url 'delete_comment' diary.id comment.id %}" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
+        <br>
+    {% endfor %}
+
+{% endblock %}
