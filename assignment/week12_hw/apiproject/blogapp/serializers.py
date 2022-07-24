@@ -11,7 +11,12 @@ class BlogListSerializer(serializers.ModelSerializer): # 글 목록
         model = Blog
         fields = ('id', 'title', 'date', 'summary')
 
-class CommentSerializer(serializers.ModelSerializer): # 댓글 작성
+class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = ('blog', 'id', 'content', 'created_at')
+
+class CommentListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ('blog', 'id', 'content', 'updated_at')

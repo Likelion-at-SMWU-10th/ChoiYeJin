@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.http import Http404
 
-from .serializers import BlogSerializer, BlogListSerializer, CommentSerializer
+from .serializers import BlogSerializer, BlogListSerializer, CommentSerializer, CommentListSerializer
 from .models import Blog, Comment
 
 # Create your views here.
@@ -69,5 +69,18 @@ class CommentView(APIView):
 
     def get(self, request, pk):
         comment = self.get_object(pk)
-        serializer = CommentSerializer(comment)
+        serializer = CommentListSerializer(comment)
         return Response(serializer.data)
+
+    def put(self, request, pk):
+        comment = self.get_object(pk)
+        serializer = CommentListSerializer(comment, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, pk):
+        comment = self.get_object(pk)
+        comment.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
