@@ -69,7 +69,7 @@ class CommentView(APIView):
 
     def get(self, request, pk):
         comment = self.get_object(pk)
-        serializer = CommentListSerializer(comment)
+        serializer = CommentSerializer(comment)
         return Response(serializer.data)
 
     def put(self, request, pk):
